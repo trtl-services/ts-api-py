@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ts-api-py",
-    version="0.1.1",
+    version="0.1.0",
     author="Fexra",
     author_email="fexra@protonmail.com",
     description="Library to interact with the TRLT Services API.",
