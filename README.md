@@ -23,7 +23,7 @@ from tswrapper import TRTLServices
 
 ```
 
-Make sure to add your TRTL Services App Token as ``TRTL_SERVICES_TOKEN`` in .env
+Generate a token with the TRTL Services [Dashboard](https://trtl.services) and store it as the variable ``TRTL_SERVICES_TOKEN`` in your os environment.
 
 
 # Documentation
