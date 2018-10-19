@@ -16,13 +16,14 @@ This wrapper allows you to easily interact with the [TRTL Services](https://trtl
 pip3 install ts-api
 ```
 
-
 # Intialization
 
 ```python
 from tswrapper import TRTLServices
 
 ```
+
+Make sure to add your TRTL Services App Token as ``TRTL_SERVICES_TOKEN`` in .env
 
 
 # Documentation
