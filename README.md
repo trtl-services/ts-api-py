@@ -13,7 +13,7 @@ This wrapper allows you to easily interact with the [TRTL Services](https://trtl
 # Installation
 
 ```bash
-pip3 install ts-api
+pip install ts-api-py
 ```
 
 # Intialization

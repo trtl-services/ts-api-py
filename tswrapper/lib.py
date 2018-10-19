@@ -58,8 +58,8 @@ class TRTLServices(object):
         data = {
             'from': from_address,
             'to': to_address,
-            'amount': int(amount),
-            'fee': int(fee),
+            'amount': float(amount),
+            'fee': float(fee),
             'paymentId': paymentId,
             'extra': extra
         }
