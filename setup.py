@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="ts-api-py",
-    version="0.1.3",
+    name="ts_api_py",
+    version="0.1.0",
     author="fexra",
     author_email="fexra@protonmail.com",
     description="Library to interact with the TRLT Services API.",
@@ -14,7 +14,7 @@ setuptools.setup(
     url="https://github.com/trtl-services/ts-api-py",
     packages=setuptools.find_packages(),
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 2",
         "License :: OSI Approved :: GNU Affero General Public License v3",
     ],
 )
