@@ -78,5 +78,4 @@ class TRTLServices(object):
     def getStatus():
 
         response = _get('status')
-        print(response)
         return json.dumps(response)
