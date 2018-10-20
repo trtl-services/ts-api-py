@@ -13,13 +13,16 @@ This wrapper allows you to easily interact with the [TRTL Services](https://trtl
 # Installation
 
 ```bash
-pip install ts_api_py
+pip install ts-api-py
 ```
 
 # Intialization
 
 ```python
-from ts_api_py import TRTLServices
+import os
+from tswrapper import TRTLServices
+
+os.environ["TRTL_SERVICES_TOKEN"] = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW8iLCJhcHBJZCI6MjAsInVzZXJJZCI6MiwicGVybWlzc2lvbnMiOlsiYWRkcmVzczpuZXciLCJhZGRyZXNzOnZpZXciLCJhZGRyZXNzOmFsbCIsImFkZHJlc3M6c2NhbiIsImFkZHJlc3M6ZGVsZXRlIiwidHJhbnNmZXI6bmV3IiwidHJhbnNmZXI6dmlldyJdLCJpYXQiOjE1Mzk5OTQ4OTgsImV4cCI6MTU3MTU1MjQ5OCwiYXVkIjoiZ2FuZy5jb20iLCJpc3MiOiJUUlRMIFNlcnZpY2VzIiwianRpIjoiMjIifQ.KkKyg18aqZfLGMGTnUDhYQmVSUoocrr4CCdLBm2K7V87s2T-3hTtM2MChJB2UdbDLWnf58GiMa_t8xp9ZjZjIg"
 
 ```
 
