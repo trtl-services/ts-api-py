@@ -13,13 +13,13 @@ This wrapper allows you to easily interact with the [TRTL Services](https://trtl
 # Installation
 
 ```bash
-pip install ts-api-py
+pip install ts_api_py
 ```
 
 # Intialization
 
 ```python
-from tswrapper import TRTLServices
+from ts_api_py import TRTLServices
 
 ```
 
