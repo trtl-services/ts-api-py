@@ -13,39 +13,40 @@ class TRTLServices(object):
         self.id = id
         
     def createAddress():
+
         data = {}
         response = _post('address', data)
-        return json.dumps(response)
+        return response
 
 
     def deleteAddress(address):
 
         response = _delete('address/' + address)
-        return json.dumps(response)
+        return response
 
 
     def viewAddress(address):
 
         response = _get('address/view/' + address)
-        return json.dumps(response)
+        return response
 
 
     def viewAddresses():
 
         response = _get('address/view/all')
-        return json.dumps(response)
+        return response
 
 
     def scanAddress(address, blockIndex):
 
         response = _get('address/scan/' + address + '/' + str(blockIndex))
-        return json.dumps(response)
+        return response
 
 
     def getFee(amount):
 
         response = _get('transfer/fee/' + str(amount))
-        return json.dumps(response)
+        return response
 
     def createTransfer(from_address, to_address, amount, fee, paymentId=None, extra=None):
 
@@ -66,16 +67,16 @@ class TRTLServices(object):
 
 
         response = _post('transfer', data)
-        return json.dumps(response)
+        return response
 
 
     def viewTransfer(transactionHash):
 
         response = _get('transfer/view/' + transactionHash)
-        return json.dumps(response)
+        return response
 
 
     def getStatus():
-
+        
         response = _get('status')
-        return json.dumps(response)
+        return response
