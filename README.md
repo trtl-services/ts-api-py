@@ -148,3 +148,13 @@ Get the current status of the TRTL Services infrastructure.
 ```python
 TS.getStatus()
 ```
+
+
+
+# License
+
+```
+Copyright (C) 2018 Rashed Mohammed, The TurtleCoin Developers
+
+Please see the included LICENSE file for more information.
+```
