@@ -17,7 +17,7 @@ class TS(object):
 
         data = {}
         response = _post('address', data)
-        return json.dumps(response)
+        return response
 
 
     # Get Address
@@ -45,7 +45,7 @@ class TS(object):
     def scanAddress(address, blockIndex):
 
         response = _get('address/scan/' + address + '/' + str(blockIndex))
-        return json.dumps(response)
+        return response
 
 
     # Get Address Keys
@@ -88,7 +88,7 @@ class TS(object):
     def getFee(amount):
 
         response = _get('transfer/fee/' + str(amount))
-        return json.dumps(response)
+        return response
 
 
     # Create Transfer
@@ -110,7 +110,7 @@ class TS(object):
         }
 
         response = _post('transfer', data)
-        return json.dumps(response)
+        return response
 
 
     # Get Transfer
@@ -129,6 +129,6 @@ class TS(object):
 
     # Get Status
     def getStatus():
-
+        
         response = _get('status')
-        return json.dumps(response)
+        return response
