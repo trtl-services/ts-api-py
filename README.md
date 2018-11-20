@@ -154,7 +154,7 @@ TS.getStatus()
 # License
 
 ```
-Copyright (C) 2018 Rashed Mohammed, The TurtleCoin Developers
+Copyright (C) 2018 Fexra, The TurtleCoin Developers
 
 Please see the included LICENSE file for more information.
 ```
