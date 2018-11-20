@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ts-api-py",
-    version="0.9.1",
+    version="0.9.2",
     author="fexra",
     author_email="fexra@protonmail.com",
     description="Python wrapper to interact with the TRTL Services API.",
