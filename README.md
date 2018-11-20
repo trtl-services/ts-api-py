@@ -55,7 +55,7 @@ TS.getAddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kur
 
 
 ### deleteAddress(address)
-Delete a selected TRTL addresses
+Delete a selected TRTL address
 
 ```python
 TS.deleteAdddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A")
@@ -63,7 +63,7 @@ TS.deleteAdddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j
 
 
 ### getAddresses()
-View all addresses belonging to the specified token.
+View all addresses.
 
 ```python
 TS.getAddresses()
@@ -95,7 +95,7 @@ TS.integrateAddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK9
 
 
 ### getIntegratedAddresses(address)
-Create an integrated address with an address and payment ID.
+Get all integrated addresses by address.
 
 ```python
 TS.getIntegratedAddresses("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A")
