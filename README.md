@@ -1,6 +1,6 @@
 # TRTL Service Python API Interface
 
-This wrapper allows you to easily interact with the [TRTL Services](https://trtl.services) API to quickly develop applications that interact with the [TurtleCoin](https://turtlecoin.lol) Network.
+This wrapper allows you to easily interact with the [TRTL Services](https://trtl.services) 0.9.0 API to quickly develop applications that interact with the [TurtleCoin](https://turtlecoin.lol) Network.
 
 
 # Table of Contents
@@ -20,18 +20,21 @@ pip install ts-api-py
 
 ```python
 import os
-from tswrapper import TRTLServices
+from TRTLservices import TS
 
 os.environ["TRTL_SERVICES_TOKEN"] = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW8iLCJhcHBJZCI6MjAsInVzZXJJZCI6MiwicGVybWlzc2lvbnMiOlsiYWRkcmVzczpuZXciLCJhZGRyZXNzOnZpZXciLCJhZGRyZXNzOmFsbCIsImFkZHJlc3M6c2NhbiIsImFkZHJlc3M6ZGVsZXRlIiwidHJhbnNmZXI6bmV3IiwidHJhbnNmZXI6dmlldyJdLCJpYXQiOjE1Mzk5OTQ4OTgsImV4cCI6MTU3MTU1MjQ5OCwiYXVkIjoiZ2FuZy5jb20iLCJpc3MiOiJUUlRMIFNlcnZpY2VzIiwianRpIjoiMjIifQ.KkKyg18aqZfLGMGTnUDhYQmVSUoocrr4CCdLBm2K7V87s2T-3hTtM2MChJB2UdbDLWnf58GiMa_t8xp9ZjZjIg"
 
+os.environ["TRTL_SERVICES_TIMEOUT"] = 2000
+
 ```
 
-Generate a token with the TRTL Services [Dashboard](https://trtl.services) and store it as the variable ``TRTL_SERVICES_TOKEN`` in your os environment.
+Generate a token with the TRTL Services [Dashboard](https://trtl.services) and store it as the variable ``TRTL_SERVICES_TOKEN`` in your os environment along with ``TRTL_SERVICES_TIMEOUT`` if you wish the change the default timeout of 2000.
+
 
 
 # Documentation
 
-API documentation is available at https://trtl.services/documentation
+API documentation is available at https://trtl.services/docs
 
 
 ## Methods
@@ -40,7 +43,14 @@ API documentation is available at https://trtl.services/documentation
 Create a new TRTL addresses
 
 ```python
-TRTLServices.createAddress()
+TS.createAddress()
+```
+
+
+### getAddress(address)
+Get address details by address
+```python
+TS.getAddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A")
 ```
 
 
@@ -48,53 +58,87 @@ TRTLServices.createAddress()
 Delete a selected TRTL addresses
 
 ```python
-TRTLServices.deleteAdddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A")
+TS.deleteAdddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A")
 ```
 
 
-### ViewAddress()
-Get address details by address
-```python
-TRTLServices.viewAddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A")
-```
-
-
-### viewAddresses()
+### getAddresses()
 View all addresses belonging to the specified token.
 
 ```python
-TRTLServices.viewAddresses()
+TS.getAddresses()
 ```
 
 
-### scanAddress()
-Scan for transactions in the next 100 blocks specified by blockIndex and address.
+### scanAddress(address, blockIndex)
+Scan an address for transactions between a 100 block range starting from the specified blockIndex.
 
 ```python
-TRTLServices.scanAddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A", 899093)
+TS.scanAddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A", 899093)
 ```
 
 
-### getFee()
-Calculate the TRTL Services fee for a specified TRTL amount.
+### getAddressKeys(address)
+Get the public and secret spend key of an address.
 
 ```python
-TRTLServices.getFee(1092.19)
+TS.getAddressKeys("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A")
 ```
 
 
-### createTransfer()
-Send a TRTL transaction with a specified account.
+### integrateAddress(address, paymentId)
+Create an integrated address with an address and payment ID.
 
 ```python
-TRTLServices.createTransfer("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A", "TRTLuzAzNs1E1RBFhteX56A5353vyHuSJ5AYYQfoN97PNbcMDvwQo4pUWHs7SYpuD9ThvA7AD3r742kwTmWh5o9WFaB9JXH8evP", 1000, 1)
+TS.integrateAddress("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A", "7d89a2d16365a1198c46db5bbe1af03d2b503a06404f39496d1d94a0a46f8804")
 ```
 
-### viewTransfer()
-Lists transaction details with specified hash.
+
+### getIntegratedAddresses(address)
+Create an integrated address with an address and payment ID.
 
 ```python
-TRTLServices.viewTransfer("EohMUzR1DELyeQM9RVVwpmn5Y1DP0lh1b1ZpLQrfXQsgtvGHnDdJSG31nX2yESYZ")
+TS.getIntegratedAddresses("TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A")
+```
+
+
+### getFee(amount)
+Calculate the TRTL Services fee for an amount specified in TRTL with two decimal points.
+
+```python
+TS.getFee(1092.19)
+```
+
+
+### createTransfer(sender, receiver, amount, fee, paymentId, extra)
+Send a TRTL transaction with an address with the amount specified two decimal points.
+
+```python
+TS.createTransfer(
+  "TRTLuxH78akDMCsXycnU5HjJE6zPCgM4KRNNQSboqh1yiTnvxuhNVUL9tK92j9kurSKdXVHFmjSRkaNBxM6Nb3G8eQGL7aj113A",
+  "TRTLuzAzNs1E1RBFhteX56A5353vyHuSJ5AYYQfoN97PNbcMDvwQo4pUWHs7SYpuD9ThvA7AD3r742kwTmWh5o9WFaB9JXH8evP",
+  1000.01,
+  1.2,
+  "7d89a2d16365a1198c46db5bbe1af03d2b503a06404f39496d1d94a0a46f8804",
+  "3938f915a11582f62d93f82f710df9203a029f929fd2f915f2701d947f920f99"
+)
+```
+#### You can leave the last two fields (paymentId and extra) blank.
+
+
+### getTransfer(address)
+Get a transaction details specified by transaction hash.
+
+```python
+TS.getTransfer("EohMUzR1DELyeQM9RVVwpmn5Y1DP0lh1b1ZpLQrfXQsgtvGHnDdJSG31nX2yESYZ")
+```
+
+
+### getWallet()
+Get wallet container info and health check.
+
+```python
+TS.getWallet()
 ```
 
 
@@ -102,14 +146,5 @@ TRTLServices.viewTransfer("EohMUzR1DELyeQM9RVVwpmn5Y1DP0lh1b1ZpLQrfXQsgtvGHnDdJS
 Get the current status of the TRTL Services infrastructure.
 
 ```python
-TRTLServices.getStatus()
-```
-
-
-# License
-
-```
-Copyright (C) 2018 Fexra, The TurtleCoin Developers
-
-Please see the included LICENSE file for more information.
+TS.getStatus()
 ```
