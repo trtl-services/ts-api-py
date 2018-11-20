@@ -9,8 +9,8 @@ import json
 BASE_URL = "https://api.trtl.services/v1"
 TOKEN = os.environ.get('TRTL_SERVICES_TOKEN')
 TIMEOUT = os.environ.get('TRTL_SERVICES_TIMEOUT', 2000)
-if not TOKEN:
 
+if not TOKEN:
     raise Exception('All methods require an JWT access token. See https://trtl.services/docs')
 
 # Get Method
