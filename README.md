@@ -1,6 +1,6 @@
 # TRTL Service Python API Interface
 
-This wrapper allows you to easily interact with the [TRTL Services](https://trtl.services) 0.9.0 API to quickly develop applications that interact with the [TurtleCoin](https://turtlecoin.lol) Network.
+This wrapper allows you to easily interact with the [TRTL Services](https://trtl.services) 0.9.2 API to quickly develop applications that interact with the [TurtleCoin](https://turtlecoin.lol) Network.
 
 
 # Table of Contents
